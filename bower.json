@@ -1,5 +1,5 @@
 {
-  "name": "Quake",
+  "name": "quake",
   "homepage": "https://github.com/duncangrubbs/quake-web",
   "authors": [
     "Duncan Grubbs <duncan.grubbs@gmail.com>"
@@ -16,6 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "paper-elements": "^1.0.7"
+    "paper-elements": "^1.0.7",
+    "iron-flex-layout": "polymerelements/iron-flex-layout#^1.3.1"
   }
 }
