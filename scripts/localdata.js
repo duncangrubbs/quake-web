@@ -21,15 +21,10 @@ function query(finalURL, request) {
   console.log(finalURL);
   var features = data.features;
   var properties = features.properties;
-  console.log(features[0].properties.mag);
-
-  for(var i = 0; i < features.length; i++){
-    var temp = features[i].properties.place;
-    // features[i].properties.timeString = timeConverter(features[i].properties.time);
+  container = document.getElementById('dataContainer');
+  for (var i = 0; i < features.length; i++) {
+    //Display data
   }
-
-  // var repeatTemp = document.querySelector('#repeat-temp');
-  // repeatTemp.items = features;
 
   return false;
 }
