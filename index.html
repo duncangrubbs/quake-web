@@ -10,10 +10,10 @@
     <!-- IMPORTANT -->
     <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="/bower_components/polymer/polymer.html">
-
+    <title>Quake - Home</title>
     <!-- Styles -->
     <link rel="stylesheet" href="styles/main.css">
-    <title>Quake</title>
+
     <script src="scripts/script.js"></script>
 
     <!-- Favicons -->
@@ -23,12 +23,11 @@
 
   <body>
 
-    <div id="header"><div id="title">Quake</div></div>
+    <div id="header"><div id="title"><img src="/res/favicon.png" id="logo" />Quake</div></div>
     <div id="content">
-      <div class="card" id="card--local-data" onclick="getURl()">Local Data</div>
-      <ul id="local">
-
-      </ul>
+      <div class="card" id="card--local-data" onclick="localData()"><p>Local Data</p></div>
+      <div class="card" id="card--personal-data" onclick="personalData()"><p>Personal Data</p></div>
+      <div class="card" id="card--saftey-data" onclick="safteyData()"><p>Saftey Data</p></div>
     </div>
   </body>
 </html>
