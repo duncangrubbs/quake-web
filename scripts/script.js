@@ -1,11 +1,11 @@
 function localData() {
-	location.href = '/localdata.html';
+	location.href = 'html/localdata.html';
 }
 
 function personalData() {
-	location.href = '/personaldata.html';
+	location.href = 'html/personaldata.html';
 }
 
 function safteyData() {
-	location.href = '/safteydata.html';
+	location.href = 'html/safteydata.html';
 }

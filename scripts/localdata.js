@@ -23,7 +23,7 @@ function query(finalURL, request) {
   var properties = features.properties;
   container = document.getElementById('dataContainer');
   for (var i = 0; i < features.length; i++) {
-    //Display data
+    console.log(features[i].location + features[i].mag);
   }
 
   return false;
