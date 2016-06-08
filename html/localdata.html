@@ -15,20 +15,22 @@
     <!-- Styles -->
     <link rel="stylesheet" href="../styles/main.css">
 
-    <script src="../scripts/script.js"></script>
-
     <!-- Favicons -->
     <link rel="icon" href="../res/favicon.png">
     <link rel="shortcut icon" href="../res/favicon.png">
   </head>
 
-  <body>
+  <body unresolved>
 
-    <div id="header"><div id="title"><img src="../res/favicon.png" id="logo"/>Local Data</div></div>
-    <div class="" id="dataContainer">
+    <template is="dom-bind" id="app">
 
-    </div>
+      <div id="header"><div id="title"><img src="../res/favicon.png" id="logo"/>Local Data</div></div>
+      <div class="content">
+      </div>
+    </template>
 
+    <script src="../scripts/script.js"></script>
+    <script src="../scripts/localdata.js"></script>
   </body>
 
 </html>

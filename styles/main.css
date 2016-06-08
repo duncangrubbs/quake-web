@@ -5,6 +5,10 @@ body {
   background: #e2e1e0;
 }
 
+h3 {
+  color: black;
+}
+
 #title {
   display: flex;
   padding-left: 16px;
@@ -29,9 +33,10 @@ body {
 #content {
   display: flex;
   flex-direction: row;
+  margin-top: 16px;
   width: 100%;
   height: 100%;
-  margin-top: 16px;
+  background-color: #e2e1e0;
 }
 
 .card {
@@ -50,4 +55,17 @@ body {
 
 .card:hover {
   box-shadow: 0 19px 24px rgba(0,0,0,0.25), 0 6px 6px rgba(0,0,0,0.22);
+}
+
+.section {
+  background-color: white;
+  color: #616161;
+  width: 33%;
+  margin: 8px;
+  padding: 16px;
+  border-radius: 3px;
+}
+
+.mag {
+  padding: 8px;
 }
