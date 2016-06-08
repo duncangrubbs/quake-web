@@ -3,12 +3,13 @@
   var app = document.querySelector("#app");
   app.data = [{'mag': '2'}, {'mag': '3'}];
   function getPosition (position) {
-  	var lat = position.coords.latitude;
-  	var long = position.coords.longitude;
-  	var request = new XMLHttpRequest();
-  	var url = "http://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2016-01-01&endtime=2016-04-20";
-  	var finalURL = url + "&minmagnitude=" + 4 + "&latitude=" + lat + "&longitude=" + long + "&maxradius=" + 5;
-  	query(finalURL, request);
+    var lat = position.coords.latitude;
+    var long = position.coords.longitude;
+    var request = new XMLHttpRequest();
+    var url = "http://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2016-01-01&endtime=2016-04-20";
+    var finalURL = url + "&minmagnitude=" + 4 + "&latitude=" + lat + "&longitude=" + long + "&maxradius=" + 5;
+    query(finalURL, request);
+    console.log(finalURL);
   }
 
   function query(finalURL, request) {
@@ -17,13 +18,16 @@
 
     var data = JSON.parse(request.response);
     var features = data.features;
-    var content = document.querySelector('.content');
+    var content = document.querySelector('#content-local');
 
     for(var i = 0; i < features.length; i++) {
-      var temp = document.createElement('div');
-      temp.className = 'mag';
-      temp.innerHTML = features[i].properties.mag;
-      content.appendChild(temp);
+      var item = document.createElement('div');
+      var time = timeConverter(features[i].properties.time);
+      item.className = 'local';
+      item.innerHTML = 'There was a ' +
+      features[i].properties.mag + ' magnitude earthquake ' + features[i].properties.place +
+      ' on ' + time;
+      content.appendChild(item);
     }
     app.set('data', features);
     return false;
@@ -49,7 +53,5 @@
       alert('Your browser does not support geolocation :(');
     }
   });
-
-
 
 })();
