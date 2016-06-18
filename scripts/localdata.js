@@ -5,11 +5,17 @@
   function getPosition (position) {
     var lat = position.coords.latitude;
     var long = position.coords.longitude;
+
     var request = new XMLHttpRequest();
-    var url = "http://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2016-01-01&endtime=2016-04-20";
-    var finalURL = url + "&minmagnitude=" + 4 + "&latitude=" + lat + "&longitude=" + long + "&maxradius=" + 5;
+    var date = new Date();
+
+    var startTime = date.getFullYear() + '-' + (date.getMonth() - 1) + '-' + date.getDay();
+    var endTime = date.getFullYear() + '-' + (date.getMonth()) + '-' + date.getDay();
+    var url = "http://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&maxradius=5&minmagnitude=3.5";
+    var finalURL = url + "&latitude=" + lat + "&longitude=" + long +
+    "&starttime=" + startTime + "&endtime=" + endTime;
+
     query(finalURL, request);
-    console.log(finalURL);
   }
 
   function query(finalURL, request) {
@@ -24,9 +30,9 @@
       var item = document.createElement('div');
       var time = timeConverter(features[i].properties.time);
       item.className = 'local';
-      item.innerHTML = 'There was a ' +
+      item.innerHTML =
       features[i].properties.mag + ' magnitude earthquake ' + features[i].properties.place +
-      ' on ' + time;
+      ' -- ' + time;
       content.appendChild(item);
     }
     app.set('data', features);
@@ -42,7 +48,7 @@
     var hour = a.getHours();
     var min = a.getMinutes();
     var sec = a.getSeconds();
-    var finalDate = month + ' ' + date + ', ' + year + ' at ' + hour + ':' + min + ':' + sec;
+    var finalDate = month + ' ' + date + ', ' + year;
     return finalDate;
   }
 
