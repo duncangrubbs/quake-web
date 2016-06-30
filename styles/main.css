@@ -44,18 +44,27 @@ h3 {
   padding-left: 16px;
 }
 
-.card {
+.card, #card-supply--list {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 300px;
-  height: 100px;
+  padding: 8px;
   border-radius: 2px;
   margin-left: 16px;
   background-color: #FFF;
   color: #616161;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.14);
   transition: all 0.2s cubic-bezier(.15,.6,.15,.5);
+}
+
+#card-supply--list {
+  width: 300px;
+  height: 500px;
+}
+
+.card {
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 100px;
 }
 
 .card:hover {
@@ -75,4 +84,9 @@ h3 {
   display: flex;
   flex-direction: row;
   padding: 8px;
+}
+
+#supply-add {
+  bottom: 0;
+  left: 0;
 }
