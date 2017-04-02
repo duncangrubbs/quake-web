@@ -10,23 +10,27 @@
     <!-- TITLE -->
     <title>Quake - Home</title>
 
-    <!-- IMPORTANT -->
-    <link rel="import" href="/html/imports.html">
-
     <!-- FAVICONS -->
     <link rel="icon" href="res/favicon.png">
     <link rel="shortcut icon" href="res/favicon.png">
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- CUSTOM ELEMENTS -->
+    <script src="quake-nav.js"></script>
+    <script src="feature-card.js"></script>
   </head>
 
   <body>
 
-    <div id="header"><div id="title"><img src="/res/favicon.png" id="logo" mouseover="backButton()"/>Quake</div></div>
-    <div id="content">
-      <div class="card" id="card--local-data" onclick="localData()"><p>Local Data</p></div>
-      <div class="card" id="card--personal-data" onclick="personalData()"><p>Personal Data</p></div>
-      <div class="card" id="card--saftey-data" onclick="safteyData()"><p>Saftey Data</p></div>
-    </div>
+    <quake-nav>
+      <span>Quake</span>
+      <span>About</span>
+    </quake-nav>
+
+    <feature-card crazy="Shit" img="https://dghskj"></feature-card>
 
   </body>
-  
+
 </html>

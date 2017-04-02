@@ -1,0 +1,27 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+quake-nav {
+  display: flex;
+  width: 100%;
+  height: 64px;
+  background: red;
+}
+
+feature-card {
+  display: flex;
+  width: 15vw;
+  height: 20vh;
+  background: #FFF;
+  margin: 16px;
+  border-radius: 3px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
